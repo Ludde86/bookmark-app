@@ -1,18 +1,23 @@
 import React, { Fragment } from 'react';
-import './App.css';
+import './main.css';
 
 function App() {
+	const linkImageStyle = {
+		backgroundImage: 'url(./react-hook.png)'
+	};
+
 	return (
 		<Fragment>
 			<nav className="navigation">
 				<a>
-					<img src="./react-hook.png" alt="react-hook" />
+					<img height="40px" src="./react-hook.png" alt="react-hook" />
 				</a>
 				<ul>
 					<li>Home</li>
 				</ul>
 			</nav>
 			<main>
+				{/* left content holds the links */}
 				<div className="leftContent">
 					<img src="./react-hook.png" alt="react-hook" />
 					<form>
@@ -49,7 +54,19 @@ function App() {
 						<button>Add</button>
 					</form>
 				</div>
-				<div className="rightContent" />
+				{/* right content holds the information of our links */}
+				<div className="rightContent">
+					<div>
+						<div
+							className={linkImageStyle} // for each link we want the logo
+						/>
+						<div>
+							<h2>
+								<a href="#">My link</a>
+							</h2>
+						</div>
+					</div>
+				</div>
 			</main>
 		</Fragment>
 	);
