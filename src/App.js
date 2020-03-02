@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import './main.css';
+import LinkCard from './components/LinkCard';
 
 function App() {
 	const [ cardData, setCardData ] = useState([
@@ -26,10 +27,6 @@ function App() {
 		setNewCard({ linkName: '', linkHref: '' });
 	};
 
-	const linkImageStyle = {
-		backgroundImage: 'url(./react-hook.png)'
-	};
-
 	return (
 		<Fragment>
 			<nav className="navigation">
@@ -49,7 +46,7 @@ function App() {
 						<div>
 							<label
 								className="formLabel"
-								for="linkTitle" // for each link we'll have a name -> and the link that its goes to
+								htmlFor="linkTitle" // for each link we'll have a name -> and the link that its goes to
 							>
 								Enter a bookmark name
 							</label>
@@ -67,7 +64,7 @@ function App() {
 						<div>
 							<label
 								className="formLabel"
-								for="linkHref" // for each link we'll have a name -> and the link that its goes to
+								htmlFor="linkHref" // for each link we'll have a name -> and the link that its goes to
 							>
 								Enter a bookmark name
 							</label>
@@ -86,17 +83,7 @@ function App() {
 				</div>
 				{/* right content holds the information of our links */}
 				<div className="rightContent">
-					<div className="linkCard">
-						<div
-							className="linkCardImage"
-							style={linkImageStyle} // for each link we want the logo
-						/>
-						<div className="linkCardLink">
-							<h2>
-								<a href="#">My link</a>
-							</h2>
-						</div>
-					</div>
+					<LinkCard cards={cardData} />
 				</div>
 			</main>
 		</Fragment>
