@@ -56,11 +56,12 @@ function App() {
 				</div>
 				{/* right content holds the information of our links */}
 				<div className="rightContent">
-					<div>
+					<div className="linkCard">
 						<div
-							className={linkImageStyle} // for each link we want the logo
+							className="linkCardImage"
+							style={linkImageStyle} // for each link we want the logo
 						/>
-						<div>
+						<div className="linkCardLink">
 							<h2>
 								<a href="#">My link</a>
 							</h2>
