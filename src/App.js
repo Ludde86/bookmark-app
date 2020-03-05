@@ -26,6 +26,10 @@ function App() {
 		setNewCard({ linkName: '', linkHref: '' });
 	};
 
+	const clearList = () => {
+		setCardData([]);
+	};
+
 	return (
 		<Fragment>
 			<nav className="navigation">
@@ -74,6 +78,7 @@ function App() {
 							/>
 						</div>
 						<button onClick={() => dispatchCardSet(newCard)}>Lägg till</button>
+						<button onClick={clearList}>Rensa alla Bokmärken</button>
 					</form>
 				</div>
 				{/* right content holds the information of our links */}
